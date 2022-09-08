@@ -1,0 +1,5 @@
+com\example\telekocsiBack\Model\UserModel.class
+com\example\telekocsiBack\Services\UserService.class
+com\example\telekocsiBack\Repositories\UserRepo.class
+com\example\telekocsiBack\Controllers\Controller.class
+com\example\telekocsiBack\TelekocsiBackApplication.class
