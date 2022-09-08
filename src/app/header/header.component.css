@@ -1,0 +1,13 @@
+.nav-link{
+    color: yellow;
+    text-decoration: none;
+}
+.mainTitle{
+    text-align:center;
+    text-decoration: underline;
+    margin-top:1%;
+    margin-bottom:1%;
+}
+.tele{
+    background-color:lightblue;
+}

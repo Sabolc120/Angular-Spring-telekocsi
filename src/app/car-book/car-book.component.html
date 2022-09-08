@@ -1,0 +1,56 @@
+<table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">Azonosító</th>
+        <th scope="col">Felhasználónév</th>
+        <th scope="col">Email</th>
+        <th scope="col">Kocsi tipus</th>
+        <th scope="col">Kocsi szin</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let users of userDetails">
+        <th scope="row">{{users.id}}</th>
+        <td>{{users.userName}}</td>
+        <td>{{users.email}}</td>
+        <td>{{users.carType}}</td>
+        <td>{{users.carColour}}</td>
+        <td><button type="submit" class="btn btn-danger" (click)="deleteUser(users)">Törlés</button></td>
+        <td><button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#editModal" (click)="editUser(users)">Adat szerkesztése</button></td>
+      </tr>
+    </tbody>
+  </table>
+  <!-- Modal -->
+<div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Adatok szerkesztése</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <form #updateForm="ngForm" (ngSubmit)="updateUser()">
+                <div class="mb-3">
+                  <label for="name" class="form-label">Felhasználónév</label>
+                  <input type="text" #userName [(ngModel)]="userToUpdate.userName" class="form-control" id="userName" name="userName" placeholder="Felhasználónév">
+                </div>
+                <div class="mb-3">
+                  <label for="exampleInputPassword1" class="form-label">Email</label>
+                  <input type="email" #email [(ngModel)]="userToUpdate.email" class="form-control" id="email" name="email">
+                </div>
+                <div class="mb-3">
+                    <label for="percentage" class="form-label">Kocsi tipus</label>
+                    <input type="text" #carType [(ngModel)]="userToUpdate.carType" class="form-control" id="cartype" name="cartype">
+                  </div>
+                  <div class="mb-3">
+                    <label for="percentage" class="form-label">Kocsi szin</label>
+                    <input type="text" #carColour [(ngModel)]="userToUpdate.carColour" class="form-control" id="carColour" name="carColour">
+                  </div>
+                <input type="submit" class="btn btn-primary cent" value="Frissítés">
+              </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+

@@ -1,0 +1,13 @@
+body{
+    background-color: lightblue;
+}
+.red{
+    color:red;
+}
+.col-sm-8{
+    margin-top:1%;
+}
+footer{
+    float:right;
+    margin-top:3%;
+}
